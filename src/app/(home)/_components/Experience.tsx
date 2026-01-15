@@ -14,7 +14,7 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-4xl md:text-5xl font-bold tracking-[0.3em] text-primary">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-[0.3em] text-primary">
             EXPERIENCE
           </h2>
           <div className="flex items-center justify-center gap-2 mt-6 mb-4">
@@ -66,8 +66,8 @@ export default function Experience() {
 
                 <div
                   className={`w-full md:w-[calc(50%-40px)] ${index % 2 === 0
-                      ? 'md:pr-8 md:text-right pl-20 md:pl-0'
-                      : 'md:pl-8 md:text-left pl-20 md:pl-0'
+                    ? 'md:pr-8 md:text-right pl-20 md:pl-0'
+                    : 'md:pl-8 md:text-left pl-20 md:pl-0'
                     }`}
                 >
                   <MotionDiv whileHover={{ y: -5, scale: 1.02 }} className="group relative">
@@ -82,7 +82,7 @@ export default function Experience() {
                           <Calendar className="w-3 h-3" />
                           {exp.duration}
                         </MotionDiv>
-                        <CardTitle className="text-xl font-bold text-foreground mb-1">
+                        <CardTitle className="text-xl font-bold mb-1">
                           {exp.role}
                         </CardTitle>
                         <p

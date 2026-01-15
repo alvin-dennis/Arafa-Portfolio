@@ -31,7 +31,7 @@ export default function About() {
             <span className="w-8 h-0.5 bg-primary" />
           </div>
 
-          <h3 className="text-xl md:text-2xl font-medium text-foreground mb-6">
+          <h3 className="text-xl md:text-2xl font-medium mb-6">
             Let me introduce myself
           </h3>
         </MotionDiv>
@@ -41,7 +41,7 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center mb-12"
         >
-          <p className="text-foreground leading-relaxed max-w-2xl mx-auto">
+          <p className="leading-relaxed max-w-2xl mx-auto">
             {about.description.split(/(UI\/UX designer|Frontend developer|IoT Innovator|comics|logo design)/g).map((part, i) =>
               ['UI/UX designer', 'Frontend developer', 'IoT Innovator', 'comics', 'logo design'].includes(part) ? (
                 <span key={i} className="text-primary">{part}</span>

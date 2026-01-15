@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MotionDiv, MotionH1, MotionSpan } from "@/components/Framer";
 import RotatingText from "@/components/ui/RotatingText";
+import { skilltags } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -42,7 +43,7 @@ export default function Hero() {
           className="mt-10 md:mt-14"
         >
           <RotatingText
-            texts={["React", "Bits", "Is", "Cool!"]}
+            texts={skilltags}
             mainClassName="
               px-3 md:px-4
               bg-primary text-black
@@ -62,7 +63,6 @@ export default function Hero() {
           />
         </MotionDiv>
       </div>
-
       <MotionDiv
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -74,7 +74,11 @@ export default function Hero() {
           alt="Hero decoration"
           fill
           className="object-contain md:object-cover"
-          priority
+          sizes="(max-width: 768px) 100vw, 
+           (max-width: 1024px) 75vw, 
+           50vw"
+          loading="eager"
+          fetchPriority="high"
         />
       </MotionDiv>
     </section>

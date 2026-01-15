@@ -24,7 +24,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-foreground mb-12"
+          className="mb-12"
         >
           Feel free to connect for collaborations and exciting IoT projects.
         </MotionP>
@@ -36,7 +36,7 @@ export default function Contact() {
         >
           {socialLinks.map((social, index) => (
             <MotionDiv
-              key={social.label} 
+              key={social.label}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 + index * 0.1 }}

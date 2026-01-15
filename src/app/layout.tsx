@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${abyssinicaSil.variable} ${iceland.variable} font-body antialiased`}
+        className={`${abyssinicaSil.variable} ${iceland.variable} font-body antialiased bg-background`}
       >
         <Background>
           <Navbar />

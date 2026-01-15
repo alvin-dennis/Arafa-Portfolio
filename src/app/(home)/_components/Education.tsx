@@ -1,6 +1,9 @@
-import Image from 'next/image';
-import { MotionDiv } from '@/components/Framer';
-import { education } from '@/lib/data';
+"use client";
+
+import Image from "next/image";
+import { MotionDiv } from "@/components/Framer";
+import { Card, CardContent } from "@/components/ui/card";
+import { education } from "@/lib/data";
 
 export default function Education() {
   return (
@@ -29,24 +32,25 @@ export default function Education() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ scale: 1.02 }}
-              className="flex items-center justify-center gap-6 bg-card border border-border rounded-xl p-6 max-w-md mx-auto hover:border-primary/50 transition-colors"
             >
-              <MotionDiv
-                whileHover={{ rotate: [0, -10, 10, 0] }}
-                className="w-16 h-16 rounded-lg flex items-center justify-center bg-primary"
-              >
-                <Image
-                  src={edu.icon}
-                  alt={`${edu.institution} Icon`}
-                  width={50}
-                  height={50}
-                  className="w-12 h-12 object-contain"
-                />
-              </MotionDiv>
-              <div>
-                <h3 className="text-xl font-semibold text-foreground">{edu.institution}</h3>
-                <p className="text-muted-foreground">{edu.degree}</p>
-              </div>
+              <Card className="flex items-center gap-6 p-6 max-w-md hover:border-primary/50 border border-border transition-colors">
+                <MotionDiv
+                  whileHover={{ rotate: [0, -10, 10, 0] }}
+                  className="w-16 h-16 rounded-lg flex items-center justify-center bg-primary"
+                >
+                  <Image
+                    src={edu.icon}
+                    alt={`${edu.institution} Icon`}
+                    width={50}
+                    height={50}
+                    className="w-12 h-12 object-contain"
+                  />
+                </MotionDiv>
+                <CardContent className="p-0">
+                  <h3 className="text-xl font-semibold text-foreground">{edu.institution}</h3>
+                  <p className="text-muted-foreground">{edu.degree}</p>
+                </CardContent>
+              </Card>
             </MotionDiv>
           ))}
         </div>

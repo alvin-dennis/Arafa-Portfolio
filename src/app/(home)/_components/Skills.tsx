@@ -9,7 +9,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-heading text-4xl md:text-5xl font-bold tracking-[0.3em] text-primary"
+          className="text-4xl md:text-5xl font-bold tracking-[0.3em] text-primary"
         >
           SKILLS
           <div className="flex items-center justify-center gap-2 mt-6 mb-4">
@@ -19,12 +19,17 @@ export default function Skills() {
           </div>
         </MotionH2>
       </div>
-      <div className="relative mx-auto w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
+      <div className="relative mx-auto w-full h-full max-w-3xl">
         <Image
           src="/assets/skills/skills.webp"
-          fill
-          alt="Center Icon"
-          className="w-24 h-24 md:w-32 md:h-32 mx-auto object-cover"
+          alt="Skills Image"
+          width={700}
+          height={700}
+          priority
+          className="mx-auto object-cover"
+          sizes="(max-width: 640px) 100vw, 
+           (max-width: 1024px) 40vw, 
+           33vw"
         />
       </div>
     </section>

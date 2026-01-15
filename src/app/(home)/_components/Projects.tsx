@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MotionDiv } from '@/components/Framer';
-import { projects } from '@/lib/data';
+import { projects, skilltags } from '@/lib/data';
 
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -189,7 +189,7 @@ export default function Projects() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-wrap justify-center gap-4 mt-16"
         >
-          {['Web Design', 'UI/UX', 'Dashboard', 'React', 'Portfolio', 'Mobile'].map((tag, index) => (
+          {skilltags.map((tag, index) => (
             <MotionDiv
               key={tag}
               initial={{ opacity: 0, scale: 0.8 }}

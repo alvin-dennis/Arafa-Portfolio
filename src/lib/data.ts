@@ -2,6 +2,15 @@ import { Linkedin, Github, Twitter } from "lucide-react";
 
 export const navItems = ["Home", "About", "Projects", "Skills", "Contact"];
 
+export const skilltags = [
+  "Web Design",
+  "UI/UX",
+  "Dashboard",
+  "React",
+  "Portfolio",
+  "Mobile",
+];
+
 export const about = {
   description: `I'm a multidisciplinary creator specializing in UI/UX designer, Frontend developer and IoT Innovator.
 I design intuitive digital experiences and express ideas through comics and logo design, blending creativity with technology.
@@ -59,7 +68,6 @@ export const education = [
     icon: "/assets/education/mec.webp",
   },
 ];
-
 
 export const experiences = [
   {
