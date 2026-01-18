@@ -1,15 +1,29 @@
 "use client"
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MotionDiv } from '@/components/Framer';
 import { projects, skilltags } from '@/lib/data';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, currentIndex]);
+
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % projects.length);
   };
@@ -33,7 +47,12 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="relative py-20 px-6 overflow-hidden">
+    <section
+      id="projects"
+      className="relative py-20 px-6 overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="max-w-6xl mx-auto">
         <MotionDiv
           initial={{ opacity: 0, y: 30 }}
@@ -108,15 +127,12 @@ export default function Projects() {
                         <div
                           className={`relative aspect-[4/3] flex items-center justify-center bg-gradient-to-br ${project.mockupBg}`}
                         >
-                          <div className="absolute inset-4 space-y-2">
-                            <div className="h-8 bg-foreground/10 rounded-lg w-3/4" />
-                            <div className="h-4 bg-foreground/5 rounded w-full" />
-                            <div className="h-4 bg-foreground/5 rounded w-2/3" />
-                            <div className="grid grid-cols-2 gap-2 mt-4">
-                              <div className="h-12 bg-primary/20 rounded-lg" />
-                              <div className="h-12 bg-primary/10 rounded-lg" />
-                            </div>
-                          </div>
+                            <Image
+                              src={project.image}
+                              alt={project.title}
+                              fill
+                              className="object-cover w-full h-full"
+                            />
                           {isActive && (
                             <MotionDiv
                               initial={{ opacity: 0, y: 10 }}
@@ -124,11 +140,18 @@ export default function Projects() {
                               transition={{ duration: 0.3, ease: "easeOut" }}
                               className="absolute -bottom-4 left-1/2 -translate-x-1/2 z-10"
                             >
-                              <Button className="rounded-full flex items-center gap-2 shadow-lg">
-                                <span>View Project</span>
-                                <ExternalLink className="w-4 h-4" />
+                              <Button asChild className="rounded-full flex items-center gap-2 shadow-lg">
+                                <Link
+                                  href={project.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <span>View Project</span>
+                                  <ExternalLink className="w-4 h-4" />
+                                </Link>
                               </Button>
                             </MotionDiv>
+
                           )}
                         </div>
                       </CardHeader>
@@ -136,22 +159,9 @@ export default function Projects() {
                         <CardTitle className="text-lg font-bold mb-1">
                           {project.title}
                         </CardTitle>
-
                         <CardDescription className="text-sm mb-3">
                           {project.description}
                         </CardDescription>
-
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map((tag) => (
-                            <Badge
-                              key={tag}
-                              variant={"outline"}
-                              className="text-xs"
-                            >
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
                       </CardContent>
                     </Card>
                   </MotionDiv>
@@ -159,7 +169,6 @@ export default function Projects() {
               );
             })}
           </div>
-
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2">
             {projects.map((_, index) => {
               const isActive = index === currentIndex;
@@ -182,7 +191,6 @@ export default function Projects() {
             })}
           </div>
         </div>
-
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

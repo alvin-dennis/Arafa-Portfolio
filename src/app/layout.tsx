@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Abyssinica_SIL, Iceland } from "next/font/google";
 import "./globals.css";
-import Background from "@/components/Background";
+import { Background } from "@/components/Background";
 import Navbar from "@/components/Navbar";
 
 const abyssinicaSil = Abyssinica_SIL({
@@ -20,15 +20,15 @@ const iceland = Iceland({
 
 
 export const metadata: Metadata = {
-  title: "Alvin Dennis — Builder | Maker | Manager",
+  title: "Arafa N — Builder | Maker | Manager",
   description:
     "Builder, maker, and developer passionate about crafting digital solutions and innovative technology. I blend creativity with technical expertise to solve real-world problems and empower communities.",
-  authors: [{ name: "Alvin Dennis", url: "https://alvinn.me/" }],
+  authors: [{ name: "Arafa N", url: "https://alvinn.me/" }],
   openGraph: {
-    title: "Alvin Dennis — Builder | Maker | Manager",
+    title: "Arafa N — Builder | Maker | Manager",
     description:
       "Builder, maker, and developer passionate about crafting digital solutions and innovative technology. I blend creativity with technical expertise to solve real-world problems and empower communities.",
-    siteName: "Alvin Dennis — Builder | Maker | Manager",
+    siteName: "Arafa N — Builder | Maker | Manager",
     url: "https://alvinn.me/",
     type: "website",
     images: [
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
         url: "/assets/og.webp",
         width: 1200,
         height: 630,
-        alt: "Alvin Dennis Portfolio",
+        alt: "Arafa N Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alvin Dennis — Builder | Maker | Manager",
+    title: "Arafa N — Builder | Maker | Manager",
     description:
       "Builder, maker, and developer passionate about crafting digital solutions and innovative technology. I blend creativity with technical expertise to solve real-world problems and empower communities.",
     images: ["/logo.png"],
@@ -62,10 +62,14 @@ export default function RootLayout({
       <body
         className={`${abyssinicaSil.variable} ${iceland.variable} font-body antialiased bg-background`}
       >
-        <Background>
-          <Navbar />
-          {children}
-        </Background>
+        <div className="fixed inset-0 pointer-events-none -z-10">
+          <Background position={-1} />
+          <Background position={0} />
+          <Background position={1} />
+          <Background position={2} />
+        </div>
+        <Navbar />
+        {children}
       </body>
     </html>
   );

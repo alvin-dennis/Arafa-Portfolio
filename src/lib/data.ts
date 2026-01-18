@@ -1,14 +1,14 @@
-import { Linkedin, Github, Twitter } from "lucide-react";
+import { Linkedin, Github, Mail } from "lucide-react";
 
-export const navItems = ["Home", "About", "Projects", "Skills", "Contact"];
+export const navItems = ["Home", "About", "Projects", "Skills"];
 
 export const skilltags = [
-  "Web Design",
-  "UI/UX",
-  "Dashboard",
-  "React",
-  "Portfolio",
-  "Mobile",
+  "Web Designer",
+  "UI/UX Designer",
+  "Hardware Designer",
+  "Frontend Developer",
+  "Content Writer",
+  "Technical Writer",
 ];
 
 export const about = {
@@ -28,35 +28,57 @@ I design intuitive digital experiences and express ideas through comics and logo
 export const projects = [
   {
     id: 1,
-    title: "HOME FOR YOU",
-    description: "Real estate platform with modern UI",
-    tags: ["Web Design", "UI/UX"],
-    gradient: "from-orange-500 via-red-500 to-pink-500",
+    title: "Purple Movement",
+    description:
+      "A visually immersive landing page crafted to inspire creativity, collaboration, and growth beyond traditional limits.",
+    link: "https://www.figma.com/design/LJ15uH59yV6PbMidOSBoMa/PORTFOLIO?node-id=66-562&t=BJ7Pf3uDueojMgLC-0",
     mockupBg: "from-orange-600/30 to-red-600/30",
+    image: "/assets/projects/purple.webp",
   },
   {
     id: 2,
-    title: "Dashboard Pro",
-    description: "Analytics dashboard application",
-    tags: ["Dashboard", "React"],
-    gradient: "from-blue-500 via-purple-500 to-pink-500",
+    title: "Beyond Syllabus",
+    description:
+      "A modern AI-powered education platform UI designed to simplify university learning and syllabus exploration.",
+    link: "https://www.figma.com/design/LJ15uH59yV6PbMidOSBoMa/PORTFOLIO?node-id=66-726&t=BJ7Pf3uDueojMgLC-0",
     mockupBg: "from-blue-600/30 to-purple-600/30",
+    image: "/assets/projects/beyond.webp",
   },
   {
     id: 3,
-    title: "Portfolio Site",
-    description: "Creative personal portfolio",
-    tags: ["Portfolio", "Design"],
-    gradient: "from-green-500 via-teal-500 to-cyan-500",
+    title: "DropaNote",
+    description:
+      "A modern SaaS landing page design focused on collecting, managing, and analyzing user feedback with clarity and speed.",
+    link: "https://www.figma.com/design/LJ15uH59yV6PbMidOSBoMa/PORTFOLIO?node-id=67-2486&t=BJ7Pf3uDueojMgLC-0",
     mockupBg: "from-green-600/30 to-teal-600/30",
+    image: "/assets/projects/dropanote.webp",
   },
   {
     id: 4,
-    title: "E-Commerce App",
-    description: "Modern shopping experience",
-    tags: ["E-Commerce", "Mobile"],
-    gradient: "from-yellow-500 via-orange-500 to-red-500",
+    title: "XCARTA",
+    description:
+      "A bold gaming platform website design showcasing immersive experiences, creators, and digital worlds.",
+    link: "https://www.figma.com/design/LJ15uH59yV6PbMidOSBoMa/PORTFOLIO?node-id=67-2700&t=BJ7Pf3uDueojMgLC-0",
     mockupBg: "from-yellow-600/30 to-orange-600/30",
+    image: "/assets/projects/xcarta.webp",
+  },
+  {
+    id: 5,
+    title: "μLearn",
+    description:
+      "A community-driven learning platform UI designed to enable peer learning, mentorship, and collaborative growth.",
+    link: "https://www.figma.com/design/LJ15uH59yV6PbMidOSBoMa/PORTFOLIO?node-id=66-1383&t=BJ7Pf3uDueojMgLC-0",
+    mockupBg: "from-red-600/30 to-blue-600/30",
+    image: "/assets/projects/mulearn.webp",
+  },
+  {
+    id: 6,
+    title: "The adventures of sunny the solar flare",
+    description:
+      "Explore the wonders of space weather with Sunny, the Solar Flare, and learn how the Sun shapes life on Earth.",
+    link: "https://astro-ignite.vercel.app/",
+    mockupBg: "from-purple-600/30 to-blue-600/30",
+    image: "/assets/projects/storybook.webp",
   },
 ];
 
@@ -64,7 +86,7 @@ export const education = [
   {
     id: 1,
     institution: "Marian Engineering College",
-    degree: "Bachelor's Computer Science",
+    degree: "B.Tech in Electronics and Computer Engineering",
     icon: "/assets/education/mec.webp",
   },
 ];
@@ -95,7 +117,19 @@ export const experiences = [
 ];
 
 export const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Github, label: "GitHub", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
+  {
+    icon: Mail,
+    label: "Email",
+    href: "mailto:arafan383@gmail.com",
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/arafa-n-571490385/",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    href: "https://github.com/Arafa-21",
+  },
 ];
