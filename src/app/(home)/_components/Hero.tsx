@@ -23,7 +23,7 @@ export default function Hero() {
             className="text-primary"
             style={{ WebkitTextStroke: "3.42px #FFFFFF" }}
           >
-            ARAFA
+            ARAFA.
           </MotionSpan>
           <MotionSpan
             initial={{ opacity: 0, x: 20 }}
