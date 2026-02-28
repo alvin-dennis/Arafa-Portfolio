@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "Arafa N — Builder | Maker | Manager",
   description:
     "Builder, maker, and developer passionate about crafting digital solutions and innovative technology. I blend creativity with technical expertise to solve real-world problems and empower communities.",
-  authors: [{ name: "Arafa N", url: "https://alvinn.me/" }],
+  authors: [{ name: "Arafa.N", url: "https://alvinn.me/" }],
   openGraph: {
     title: "Arafa N — Builder | Maker | Manager",
     description:
